@@ -1,6 +1,8 @@
 var currentDayEl = $('#currentDay');
 var currentWeekDayEl = $('#currentWeekDay');
-
+var pastEl = $('.row time-block past');
+var textEventEl = document.querySelector('.col-8 col-md-10 description');
+var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -34,6 +36,25 @@ var currentWeekDayEl = $('#currentWeekDay');
     var weekDay = dayjs().format('dddd');
     currentWeekDayEl.text(weekDay);
   }
+  //attempting to hange color on the houe//
+//   function hourChange () {
+//     if (dayjs().hour()){
+//         $('.past').hasClass('.present');
+//         console.log('1pm');
+//     }
+//     return;
+//   }
 
+function saveEvent () {
+    var event = {
+        textEventEl: textEventEl.value.trim(),
+      };
+    
+    localStorage.setItem("event", JSON.stringify(event));
+}
+ 
+saveButton.addEventListener("click", saveEvent());
+    
   displayWeekDay();
   displayDay();
+  hourChange();
