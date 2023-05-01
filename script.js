@@ -1,9 +1,13 @@
 var currentDayEl = $('#currentDay');
 var currentWeekDayEl = $('#currentWeekDay');
 var pastEl = $('.row time-block past');
-var textEventEl = document.querySelector('.col-8 col-md-10 description');
+var hourEl  = document.querySelector('.col-2 col-md-1 hour text-center py-3');
+
+var textEventSpan = document.querySelector('.col-8 col-md-10 description');
 var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+
+
+    // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 // $(function () {
@@ -27,7 +31,7 @@ var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
     // TODO: Add code to display the current date in the header of the page.
 //   });
 
-  function displayDay() {
+  function displayDate() {
     var rightNow = dayjs().format('MMM DD, YYYY');
     currentDayEl.text(rightNow);
   }
@@ -36,6 +40,10 @@ var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
     var weekDay = dayjs().format('dddd');
     currentWeekDayEl.text(weekDay);
   }
+  displayWeekDay();
+  displayDate();
+
+
   //attempting to hange color on the houe//
 //   function hourChange () {
 //     if (dayjs().hour()){
@@ -44,17 +52,24 @@ var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
 //     }
 //     return;
 //   }
+   
+$(".saveBtn").on("click", function () {
+    
+    console.log(this);
+    var text = $(this).siblings(".description").val(); 
+    var time = $(this).parent().attr("id"); 
 
-function saveEvent () {
-    var event = {
-        textEventEl: textEventEl.value.trim(),
-      };
-    
-    localStorage.setItem("event", JSON.stringify(event));
-}
- 
-saveButton.addEventListener("click", saveEvent());
-    
-  displayWeekDay();
-  displayDay();
-  hourChange();
+   //save items to the local storage.
+    localStorage.setItem(time, text);
+})
+//keep already saved tasks on the scheduler.//
+$("#hour-8 .description").val(localStorage.getItem("hour-8"));
+$("#hour-9.description").val(localStorage.getItem("hour-9"));
+$("#hour-10 .description").val(localStorage.getItem("hour-10"));
+$("#hour-11 .description").val(localStorage.getItem("hour-11"));
+$("#hour-12 .description").val(localStorage.getItem("hour-12"));
+$("#hour-13 .description").val(localStorage.getItem("hour-13"));
+$("#hour-14 .description").val(localStorage.getItem("hour-14"));
+$("#hour-15 .description").val(localStorage.getItem("hour-15"));
+$("#hour-16 .description").val(localStorage.getItem("hour-16"));
+$("#hour-17 .description").val(localStorage.getItem("hour-17"));
