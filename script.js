@@ -1,7 +1,10 @@
 var currentDayEl = $('#currentDay');
 var currentWeekDayEl = $('#currentWeekDay');
+var presentEl = $('.row time-block present');
+var futureEl = $('.row time-block future');
 var pastEl = $('.row time-block past');
 var hourEl  = document.querySelector('.col-2 col-md-1 hour text-center py-3');
+var currentTimeEl = $('#currentTime');
 
 var textEventSpan = document.querySelector('.col-8 col-md-10 description');
 var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
@@ -40,18 +43,20 @@ var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
     var weekDay = dayjs().format('dddd');
     currentWeekDayEl.text(weekDay);
   }
+
+//   function displayTime() {
+//     var currentTime = dayjs().format('HH:mm:ss');
+//    currentTimeEl.text(currentTime); 
+//   }
+
+  function displayTime() {
+    var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+    currentTimeEl.text(rightNow);
+  }
   displayWeekDay();
   displayDate();
+  displayTime();
 
-
-  //attempting to hange color on the houe//
-//   function hourChange () {
-//     if (dayjs().hour()){
-//         $('.past').hasClass('.present');
-//         console.log('1pm');
-//     }
-//     return;
-//   }
    
 $(".saveBtn").on("click", function () {
     
@@ -73,3 +78,30 @@ $("#hour-14 .description").val(localStorage.getItem("hour-14"));
 $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+
+//identify the current time
+//split the number from the ID
+//make the number an Int
+//compare the Int to current hour with if statements 
+//remove the class and add class dependent on the hour
+ 
+function hourChange () {
+    var currentHour = dayjs().hour('HH'); 
+    var blockHour = string.split('hour-');
+    parseInt(blockHour)
+    if (dayjs().hour()){
+        $('.past').hasClass('.present');
+        console.log('1pm');
+    }
+    else if {
+
+    }
+    else {
+
+    }
+    return;
+  }
+
+  var blockHour = string('.time-block').split('hour-');
+  console.log('blockHour');
+    parseInt(blockHour)
