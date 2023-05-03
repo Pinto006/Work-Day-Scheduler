@@ -1,8 +1,6 @@
 var currentDayEl = $('#currentDay');
 var currentWeekDayEl = $('#currentWeekDay');
-var presentEl = $('.row time-block present');
-var futureEl = $('.row time-block future');
-var pastEl = $('.row time-block past');
+var timeBlockEl = $('.row time-block');
 var hourEl  = document.querySelector('.col-2 col-md-1 hour text-center py-3');
 var currentTimeEl = $('#currentTime');
 
@@ -87,21 +85,15 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"));
  
 function hourChange () {
     var currentHour = dayjs().hour('HH'); 
-    var blockHour = string.split('hour-');
-    parseInt(blockHour)
-    if (dayjs().hour()){
-        $('.past').hasClass('.present');
-        console.log('1pm');
-    }
-    else if {
+    var blockHour = id $(this.attr('id'));
+    
+    for (var i = 0; i < blockHour; i += 1) 
 
-    }
-    else {
-
-    }
-    return;
-  }
-
-  var blockHour = string('.time-block').split('hour-');
-  console.log('blockHour');
-    parseInt(blockHour)
+    if (currentHour === id) {
+        $(timeBlockEl.addClass)('present');
+    }  else if (currentHour > id) {
+        $(timeBlockEl.addClass)('past');
+    }  else (currentHour < id) {
+        $(timeBlockEl.addClass)('future');
+    } 
+}
