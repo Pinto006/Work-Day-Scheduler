@@ -23,7 +23,7 @@ var saveButton = document.querySelector(".btn saveBtn col-2 col-md-1");
   displayDate();
   displayTime();
 
-   //event listener
+   //event listener for save button
 $(".saveBtn").on("click", function () {
     
     console.log(this);
@@ -54,8 +54,7 @@ $("#17 .description").val(localStorage.getItem("17"));
 function hourChange() {
 
 $('.time-block').each (function () { 
-    // var currentHour = dayjs().hour(); 
-    var currentHour = 10;
+    var currentHour = dayjs().hour(); 
     var blockHour = parseInt($(this).attr('id'));
     
     console.log(blockHour, currentHour)

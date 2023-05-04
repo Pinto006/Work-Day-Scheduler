@@ -2,11 +2,11 @@
 
 ## Description
 
-This is a simple work day scheduler app.  This was created using day.js, javascrip, css and JQuery.  The goal was to dispaly the current day, date and time at the top.  I was then to use javascript and jQuery to make the app more dynamtic by color blocking the hours based on the acutal current time.  I also used localstorage to save the events that are typed in by the user even if the page had been refreshed.  
+This is a simple work day scheduler app.  This was created using day.js, javascrip, css and JQuery.  The goal was to dispaly the current day, date and time at the top.  I was then to use javascript and jQuery to make the app more dynamtic by color blocking the hours based on the current time.  I also used local storage to save the events that are typed in by the user even if the page had been refreshed.  
 
 ## Installation
 
-Work Day Scheduler URL:
+Work Day Scheduler URL:  https://pinto006.github.io/Work-Day-Scheduler/
 
 ![Alt text](images/Screenshot.png)
 
