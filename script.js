@@ -54,7 +54,8 @@ $("#17 .description").val(localStorage.getItem("17"));
 function hourChange() {
 
 $('.time-block').each (function () { 
-    var currentHour = dayjs().hour(); 
+    // var currentHour = dayjs().hour(); 
+    var currentHour = 10;
     var blockHour = parseInt($(this).attr('id'));
     
     console.log(blockHour, currentHour)

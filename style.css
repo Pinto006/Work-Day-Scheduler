@@ -44,6 +44,12 @@ body {
     background-color: #77dd77;
     color: white;
   }
+
+  .lead {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:darkgreen;
+    
+  }
   
   .saveBtn {
     border-left: 1px solid black;
